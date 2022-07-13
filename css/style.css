@@ -24,7 +24,7 @@ h1 {
   width: 500px;
   min-height: 40px;
   align-items: center;
-  background-color: darkgoldenrod;
+  background-color: grey;
   border-radius: 5px;
   padding: 10px;
 }
@@ -46,8 +46,8 @@ h1 {
 
 .button-wrapper button {
   width: 80%;
-  background-color: springgreen;
-  color: #ffffff;
+  /* background-color: springgreen; */
+  color: black;
   outline: none;
   height: 25px;
   cursor: pointer;
@@ -61,7 +61,7 @@ h1 {
   border-radius: 5px;
   margin-bottom: 15px;
   padding: 10px;
-  background-color: orange;
+  background-color: grey;
 }
 
 .todo-item.checked {
@@ -96,7 +96,7 @@ h1 {
 .buttons button {
   outline: none;
   border: none;
-  background-color: crimson;
+  background-color: rgb(231, 175, 71);
   color: #ffffff;
   cursor: pointer;
   height: 25px;
@@ -110,4 +110,30 @@ h1 {
   to {
     opacity: 0;
   }
+}
+
+.footer-wrap button {
+  /* width: 80%; */
+  /* background-color: springgreen; */
+  color: black;
+  outline: none;
+  height: 25px;
+  cursor: pointer;
+  border: none;
+}
+
+.footer-wrap {
+  /* display: flex;
+  width: 500px;
+  min-height: 40px;
+  align-items: center;
+  background-color: darkgoldenrod;
+  border-radius: 5px;
+  padding: 10px;
+  /*  */
+  display: flex;
+  flex-flow: row;
+  width: 500px;
+  justify-content: space-between;
+  align-items: center;
 }
