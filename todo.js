@@ -2,6 +2,7 @@ const addTaskBtn = document.getElementById('add-task-btn');
 const deskTaskInput = document.getElementById('desription-task');
 const todosWrapper = document.querySelector('.todos-wrapper');
 const footerBtnWrap = document.querySelector('.footer-wrap')
+const taskCompleteBtn = document.getElementById('btn-complete')
 
 let tasks;
 !localStorage.tasks ? tasks = [] : tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -59,7 +60,7 @@ addTaskBtn.addEventListener('click', () => {
 	updateLocal();
 	fillHtmlList();
 	deskTaskInput.value = '';
-	renderFooterBtn();
+	renderFooterBtn(tasks);
 	
 })
 
@@ -73,12 +74,6 @@ const deleteTask = index => {
 		
 	}, 500)
 }
-
-// const activeTask = tasks.filter(item => item.completed === false);
-// const completedTask = tasks.filter(item => item.completed === true);
-// console.log(activeTask)
-// console.log(completedTask)
-
 
 const createTemplateFooterBtn = (tasks) => {
 	const activeTask = tasks.filter(item => item.completed === false);
@@ -97,5 +92,10 @@ const createTemplateFooterBtn = (tasks) => {
 
 const renderFooterBtn = (tasks) => {
 	footerBtnWrap.innerHTML = "";
+	updateLocal()
 	footerBtnWrap.innerHTML = createTemplateFooterBtn(tasks)
+	
 }
+
+taskCompleteBtn.addEventListener('click', renderFooterBtn())
+
